@@ -7,7 +7,8 @@ force:
 	make all
 
 teachingStatementWWU.pdf: teachingStatementWWU.tex
-	pdflatex teachingStatementWWU.tex
+	pdflatex --shell-escape teachingStatementWWU.tex
+	bibtex teachingStatementWWU.tex
 
 #The coverletter-slides.pdf file contains work on 
 teachingStatement-slides.pdf: teachingStatement-slides.tex
