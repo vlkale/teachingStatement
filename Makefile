@@ -1,4 +1,4 @@
-all: teachingStatementWWU.pdf
+all: teachingStatement.pdf
 
 TEX_FILES = teachingStatementWWU.tex
 
@@ -9,6 +9,10 @@ force:
 teachingStatementWWU.pdf: teachingStatementWWU.tex
 	pdflatex --shell-escape teachingStatementWWU.tex
 	bibtex teachingStatementWWU.tex
+
+teachingStatement.pdf: teachingStatement_NameOfUniversity_NameOfPos_VivekKale.tex
+	pdflatex --shell-escape teachingStatement_NameOfUniversity_NameOfPos_VivekKale.tex
+#	bibtex teachingStatement_NameOfUniversity_NameOfPos_VivekKale.tex
 
 #The coverletter-slides.pdf file contains work on 
 teachingStatement-slides.pdf: teachingStatement-slides.tex
@@ -21,7 +25,7 @@ cleanTS:
 	rm -f teachingStatementWWU.aux teachingStatementWWU.toc teachingStatementWWU.log teachingStatementWWU.pdf
 
 clean:
-	rm -f *.aux *.toc *.log *.bbl *.blg *.out teachingStatement-slides.pdf teachingStatementWWU.pdf
+	rm -f *.aux *.toc *.log *.bbl *.blg *.out teachingStatement-slides.pdf teachingStatement_NameOfUniversity_NameOfPos_VivekKale.pdf teachingStatement.pdf
 
 realclean:
-	rm -f *.aux *.toc *.log *.bbl *.blg teachingStatement-slides.pdf teachingStatementWWU.pdf
+	rm -f *.aux *.toc *.log *.bbl *.blg teachingStatement-slides.pdf teachingStatementWWU.pdf teachingStatement.pdf
